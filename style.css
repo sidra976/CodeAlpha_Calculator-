@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #7ccdf3, #0e1b3d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+ 
+}
+
+#display {
+  width: 100%;
+  font-size: 2rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: transparent;
+  color: inherit;
+  text-align: right;
+  outline: none;
+}
+
+.calculator {
+  width: 320px;
+  max-width: 100%;
+  padding: 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.light-theme {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #000;
+}
+
+.dark-theme {
+  background-color: #1b1b1f;
+  color: #fff;
+}
+
+.display-container {
+  margin-bottom: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.btn {
+  height: 3.5rem;
+  font-size: 1.4rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 26px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #072136;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.light-theme .btn {
+  background-color: #CDE2F1;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.light-theme .equal {
+  background-color: #25a9ff;
+  color: #fff;
+  box-shadow: 1px 1px 2px gainsboro;
+}
+
+.light-theme .btnBlue {
+  background-color: #82abd7;
+  color: #fff;
+}
+
+.dark-theme .btn {
+  background-color: #2a2a2e;
+  color: #2A6C90;
+  font-weight: 500;
+  text-shadow: 0 0 5px #247ec7;
+}
+
+.dark-theme .equal {
+  background-color: #3187e3;
+  color: #fff;
+}
+
+.dark-theme .btnBlue {
+  background-color: #025AB5;
+  color: #fff;
+}
+
+.dark-theme .btnGray {
+  background-color: #7b7d82;
+  color: #fff;
+}
+
+.large-btn {
+  grid-column: span 2;
+}
+
+.tall-btn {
+  grid-row: span 2;
+  height: 80%;
+}
+
+.plus {
+  grid-column: 4;
+  grid-row: 4 / span 2;
+}
+
+.equal {
+  grid-column: 4;
+  grid-row: 6 / span 2;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 100%;
+    
+  }
+}
+
+@media (min-width: 768px) {
+  .calculator {
+    transform: scale(0.85);
+  }
+}
